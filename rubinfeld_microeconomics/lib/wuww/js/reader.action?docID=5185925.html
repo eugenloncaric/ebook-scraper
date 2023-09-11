@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js ui-mobile-rendering" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>ProQuest Ebook Central - Reader</title>
+<meta name="description" content="ebrary ProQuest Reader">
+<meta name="copyright" content="ProQuest Ebook Central">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<meta name="google-site-verification" content="ATcVmSMgOeQPgMyNoJ4uhs3QxOfyXpYEJSXK2UR4EK0" />
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script>
+    	var $j = $.noConflict(true);
+    	(function (jQuery) {
+        	window.initGTM = function (w, d, s, l, i) {
+            	w[l] = w[l] || []; var f = d.getElementsByTagName(s)[0],
+                	j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    	'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        	}
+    	})($j);
+    	initGTM(window,document,'script','dataLayer', "GTM-MWPR6C");
+		  var isPqOne = false;
+		  if (isPqOne) initGTM(window,document,'script','dataLayer', "GTM-TGWHZWH");
+	</script>
+<link href="css/application-reader-base.css" rel="stylesheet"></head>
+<body>
+<a href="#ebtop1" tabindex="0" id="skipToContent" class="sr-only" role="application" aria-label="Skip to main content">Skip to main content</a>
+<div id="icon-defs"></div>
+
+<div id="accessMessage" class="sr-only sr-only-focusable" role="banner">
+<h2>Note for Screen Readers</h2>
+<form action="accessiblity.action?dt=1694435556414" method="post">
+<p class="status">Text Only Mode is off.</p>
+<p>With Text Only Mode, PDF books are presented as plain text instead of images, which can result in accessibility limitations like headings, images, and charts being omitted from the book. Other functions are optimized for screen reader users, such as creating notes or searching within the book, but highlights are not supported in Text Only Mode.<br/><br/>For more information about accessibility on Ebook Central, <a href="https://support.proquest.com/s/article/Accessibility-Statement-Ebook-Central?language=en_US" target="_blank">read our Accessibility Statement</a>.</p>
+<p>To enable Text Only Mode, please sign in.</p>
+<a href="/auth/lib/wuww/login.action">Sign In</a>
+</form>
+<button class="btn btn-default btn-close icon-close" onclick="$('#accessMessage').hide()" id="accsPanelClose" aria-label="Close Accessibility Panel"></button>
+</div>
+
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/15495670-c116-4ad3-bb4d-1625f90d192d/OtAutoBlock.js"></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="15495670-c116-4ad3-bb4d-1625f90d192d"></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+
+<script type="application/javascript">
+		window.PendoController = (function () {
+			const _loadPendo = (apiKey) => {
+				(function (p, e, n, d, o) {
+					var v, w, x, y, z; o = p[d] = p[d] || {}; o._q = o._q || [];
+					v = ['initialize', 'identify', 'updateOptions', 'pageLoad', 'track']; for (w = 0, x = v.length; w < x; ++w)(function (m) {
+						o[m] = o[m] || function () { o._q[m === v[0] ? 'unshift' : 'push']([m].concat([].slice.call(arguments, 0))); };
+					})(v[w]);
+					y = e.createElement(n); y.async = !0; y.src = 'https://cdn.eu.pendo.io/agent/static/' + apiKey + '/pendo.js';
+					z = e.getElementsByTagName(n)[0]; z.parentNode.insertBefore(y, z);
+				})(window, document, 'script', 'pendo');
+			};
+			const _isOneTrustCookieFound = (code) => (typeof OnetrustActiveGroups !== "undefined" && OnetrustActiveGroups.includes(code));
+			const _reportTrustPreferencesChange = () => {
+				if (!(typeof pendo !== 'undefined' && pendo.isReady && pendo.isReady())) return;
+				const url = window.location.origin + '/ws/pendo/update' + '?vid=' + pendo.visitorId + '&aid=' + pendo.accountId + '&sid=' + pendo.getSerializedMetadata().visitor.sessionid 
+						+ '&fc=' + (_isOneTrustCookieFound('C0003') ? 'yes' : 'no')
+						+ '&tc=' + (_isOneTrustCookieFound('C0004') ? 'yes' : 'no');
+				fetch(url, { method: "POST" });
+			};
+			let loaded = false;
+			let initialized = false;
+			const _init = (options) => {
+				if (!initialized && _isOneTrustCookieFound('C0003')) {
+					pendo.initialize(options);
+					initialized = true;
+				}
+			}
+			return {
+				init: (options) => {
+					if (loaded) return;
+					_loadPendo('21ab3f40-ea41-4349-45ec-2f519c826d83');
+					window.addEventListener('OneTrustGroupsUpdated', (_) => {
+						_init(options);
+						_reportTrustPreferencesChange();
+					});
+					loaded = true;
+				},
+				updateOptions: (options) => {
+					if (!(loaded && initialized)) return;
+					pendo.identify(options);
+				},
+				isLoaded: () => loaded,
+				isInitialized: () => initialized
+			};
+		})();
+
+		PendoController.init({
+			visitor: {
+				id: '698913c883f34e98be8fb1c20a3fce83',
+				ebc_language: 'en',
+				pqone: 'NO',
+				sessionid: '698913c883f34e98be8fb1c20a3fce83',
+			},
+			account: {
+				id:	'wuww'
+			}
+		});
+	</script>
+<div class="navbar navbar-inverse navbar-noborder" id="headerContainer">
+
+<nav id="nav-bar-links-parent" class="navbar navbar-inverse" role="navigation">
+
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-bar-links">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="/lib/wuww/home.action">
+<div id="mainNav">
+<div class="logoIcon"><img src="img/pq-logo-icon.png" width="50" height="50" alt="ProQuest Ebook Central"></div>
+<div class="logoContainer">
+<h1 class="sr-only">Logo</h1>
+<div class="logoPQ">ProQuest</div>
+<div class="logoType">Ebook Central<span>&#8482;</span></div>
+</div>
+</div>
+</a>
+</div>
+
+<div class="collapse navbar-collapse" id="nav-bar-links">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="/lib/wuww/home.action?force=1">Home</a></li>
+<li><a href="/lib/wuww/search.action">Search</a></li>
+<li><a href="/lib/wuww/bookshelf.action">Bookshelf</a></li>
+<li class="dropdown dropdown-inset">
+<button id="sLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></button>
+<ul class="dropdown-menu" role="menu" aria-labelledby="sLabel">
+<li><a href="/auth/lib/wuww/profile.action">Profile</a></li>
+<li><a href="/auth/lib/wuww/language.action">Language</a></li>
+</ul>
+<li>
+<li>
+<a href="/lib/wuww/readerSupportHelp.action" target="_blank" type="button" class="btn btn-default btn-sm btn-global-svg" id="helpGlobalTool" aria-label="Help">
+<span aria-hidden="true">
+<svg focusable="false" width="21" height="21">
+<use xlink:href="#icon-help"></use>
+</svg>
+</span>
+<span class="btn-label-hidden">Help</span>
+</a>
+</li>
+<li><a id="signExternalGlobalTool" href="/auth/lib/wuww/login.action">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+</div>
+<div id="mayitestpg" data-ebcDomainPrefix="http://ebookcentral.proquest.com" data-pqMayankData="/auth/lib/wuww" data-pqCoverData="/covers/docNumber-m.jpg" class="hide"></div>
+
+<div class="modal fade ebcSigninModal" id="consentModal" role="dialog" tabindex="-1" aria-labelledby="cmTitle" data-url="/auth/lib/wuww/userConsentAction.json?action=" data-modal-enable="false">
+<div class="modal-dialog">
+<div id="consentModalContent" class="modal-content">
+<div class="modal-body" id="rconsentModalBody">
+
+
+<div class="row no-margin">
+
+<div class="col-md-3 hidden-xs hidden-sm preview-pane no-padding">
+<div class="col-md-12">
+<div class="table-layout-tb">
+<div class="table-layout-tr">
+<div class="table-layout-td">
+<img src="img/personal-info.svg" alt="person with protected data" width="114" height="122">
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col-xs-12 col-md-8 col-md-offset-1 form-pane no-padding">
+
+<div class="form-header clearfix">
+<div class="col-md-12">
+<h1 id="cmTitle">Important Notice</h1>
+</div>
+</div>
+
+
+
+<div id="screen-consent">
+<div id="consentModalContainer" class="col-md-12 form-horizontal">
+<div class="modal-text">
+<p>By continuing to use your account, you agree to ProQuest's <a id="consent_link_privacy" href="http://www.proquest.com/about/privacy-statement.html" target="_blank">Privacy Policy</a> and <a id="consent_link_terms" href="http://www.proquest.com/about/terms-and-conditions.html" target="_blank">Terms of Service</a> for the information that you provide us.</p>
+<p>An account is <b>required</b> to download books, annotate and use the bookshelf.</p>
+<p>An account is <b>not required</b> to search, read and download chapters.</p>
+<p>You may view, manage, and delete your account information on the Profile page.</p>
+<p>If you decline, you will be signed out of your account.</p>
+</div>
+<div class="align-right modal-footer">
+<button id="cmDeclineBtn" data-consent="decline" data-logout-url="/auth/lib/wuww/logout.action?userName=Guest_3d0015e9a6be4c2baca874d8a41e00f4&userId=-1&userTypeID=34762&UserState=GUEST" class="btn btn-default btn-lg ga_request_data_cancel">Decline</button>
+<button id="cmAcceptBtn" data-consent="accept" class="btn btn-primary btn-lg ga_request_data_submit">Accept</button>
+</div>
+<div id="cmErrorMsg" class="error-msg" role="alert"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="generic_error_msg" style="display:none;">Sorry, we've encountered an error. Please try again later.</div>
+<script type="text/javascript">
+	if(window.jQuery) {
+		$(document).ready(function(){
+			var showConsent = $("#consentModal").attr("data-modal-enable");
+			if(showConsent === "true"){
+				$("#consentModal #cmErrorMsg").html("");
+				$("#consentModal").modal({backdrop: 'static', keyboard: false});
+			}
+		});
+		
+		$("#consentModal").on("shown.bs.modal", function(e){
+			var $selectableItems = $(this).find("a, button, input, select");
+			var $firstElem = $selectableItems.first();
+			var $lastElem = $selectableItems.last();
+			var defs = [{elem: $lastElem, next: $firstElem }];
+			
+			$.each(defs, function(index, def){
+				$.each(def, function(key, val){
+					val.on("keydown", function(e){
+						var keyCode = e.keyCode || e.which;
+						if (keyCode == 9) {
+							if(key === "elem" ? !e.shiftKey : e.shiftKey) {
+								e.preventDefault();
+								key === "elem" ? def["next"].focus() : def["elem"].focus();
+							}
+						}
+					});
+				});
+			});
+			
+			$firstElem.focus();
+		});
+		
+		$("#cmAcceptBtn, #cmDeclineBtn").on('click keydown', function(e){
+			if(e.type === "keydown" && !(e.which == 13 || e.which == 32)) return;
+			e.preventDefault();
+			var actionType = $(e.target).attr("data-consent");	
+			$.ajax({
+		    	  type: 'GET',
+		    	  url: $("#consentModal").attr("data-url")+actionType, 
+		    	  async: false,
+		    	  success: function(data) {
+		    		if ($.isPlainObject(data) && data.success === true) {
+		    				if(actionType === "accept"){
+		    				  $("#consentModal").modal("hide");
+		    				  
+		    				  if(window.location.href.indexOf('detail.action') > -1){
+		    					  ModalActionUtil.validateAndShowModal("details", '', '');
+		    				  }
+		    				}else{
+		    					window.location.href=$("#consentModal #cmDeclineBtn").attr("data-logout-url");
+		 	    			}
+			    		}else{
+			    			$("#consentModal #cmErrorMsg").html($("#generic_error_msg").html());
+			    		}
+		    		},
+		    	  error: function(request, status, error) {
+		    		  $("#consentModal #cmErrorMsg").html($("#generic_error_msg").html());
+		    	  }
+		    	});
+		});
+	}
+</script>
+<div tabindex="-1" id="ebtop1"></div>
+<div id="readerRegion"></div>
+<div id="emptyTmpWrapper" tabindex="-1" aria-live="assertive"></div>
+
+<div class="modal fade" id="dialogModalAlertError" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close btn-close close-svg-btn" data-dismiss="modal">
+<span aria-hidden="true"><svg viewBox="0 0 16 16" height="12" width="12" focusable="false"><use xlink:href="#icon-close-lg" /></svg></span>
+<span class="sr-only">Close</span>
+</button>
+<h4 class="modal-title" id="myModalLabelAlertError">Alert</h4>
+</div>
+<div class="modal-body">
+
+<div class="row">
+<div class="col-sm-2 col-md-offset-1 dialogErrorHand"><svg focusable="false" width="42" height="42" viewBox="0 0 16 16"><use xlink:href="#icon-hand" /></svg></div>
+<div class="col-sm-9">
+<p class="dialogErrorMsg" id="msg"></p>
+</div>
+</div>
+
+</div>
+<div class="modal-footer">
+<button id="modalCancel" type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+<div id="dialog-success-msg" class="info" aria-live="assertive" style=" display:none; position: fixed;   top: 120px;   left: 26%;  right: 25%;  z-index: 7000;  ">
+<div class="alert alert-info" role="alert">
+<a class="close" onclick="$('#dialog-success-msg').hide()" href="#" aria-hidden="true">&times;</a>
+<p id="sMsg" style="text-align:center;"></p>
+<br/>
+</div>
+</div>
+<div id="MayankTestId_698913c883f34e98be8fb1c20a3fce83"></div>
+<input type="hidden" id="ga_key" name="ga_key" value="UA-69343401-1" />
+<input type="hidden" id="ga_access" name="ga_access" value="GUEST" />
+<input type="hidden" id="ga_siteId" name="ga_siteId" value="8752" />
+<input type="hidden" id="ga_siteName" name="ga_siteName" value="wuww" />
+<input type="hidden" id="ga_sId" name="ga_sId" value="698913c883f34e98be8fb1c20a3fce83" />
+<input type="hidden" id="ga_pId" name="ga_pId" value="-1" />
+<input type="hidden" id="ga_lType" name="ga_lType" value="PATRON Login" />
+<input type="hidden" id="ga_aType" name="ga_aType" value />
+<input type="hidden" id="ga_aSession" name="ga_aSession" value="false" />
+<input type="hidden" id="ga_sCType" name="ga_sCType" value="true" />
+<input type="hidden" id="ga_pqSession" name="ga_pqSession" value />
+<input type="hidden" id="ga_pageTitle" name="ga_pageTitle" value="READER" />
+<input type="hidden" id="pqOne_key" name="pqOne_key" value="false" />
+<input type="hidden" id="fromReaderRedirectPQ" value />
+<input type="hidden" id="PQAccountId" value />
+<div id="readerPQURL" style="display:none">https://ebookcentral.proquest.com/lib/wuww/reader.action?docID=5185925</div>
+<div id="detailPQURL" style="display:none">https://ebookcentral.proquest.com/lib/wuww/detail.action?docID=5185925</div>
+<div class="display:none;" id="searchUserData" data-userTypeID="0" data-apiUserId="Guest_3d0015e9a6be4c2baca874d8a41e00f4" data-sessionTimeout="1800"></div>
+<p id="checkVs" class="hidden-xs hidden-sm"></p>
+<div id="page-num-floater" style="position: absolute; bottom:0px; left:50%; display:none;">
+<div id="addPageNum" class="page-num-content" style="position:relative;">Page 1</div>
+</div>
+<script type="text/javascript" charset="utf-8" src="/optimizedresources/pdf/pdfreader.e8de9647dfb4316e15a4.js"></script>
+</body>
+</html>
